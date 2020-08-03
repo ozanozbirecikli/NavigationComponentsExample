@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.navigationcomponentsexample.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+
+        <argument
+            android:name="newuser"
+            app:argType="com.example.navigationcomponentsexample.User" />
+
+        <argument
+            android:name="deleteUser"
+            android:defaultValue="None" />
+        <action
+            android:id="@+id/action_mainFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_viewFragment"
+            app:destination="@id/viewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.navigationcomponentsexample.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewFragment"
+        android:name="com.example.navigationcomponentsexample.ViewFragment"
+        android:label="fragment_view"
+        tools:layout="@layout/fragment_view">
+
+        <argument
+            android:name="users"
+            app:argType="com.example.navigationcomponentsexample.User[]" />
+        <action
+            android:id="@+id/action_viewFragment_to_deleteFragment"
+            app:destination="@id/deleteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/deleteFragment"
+        android:name="com.example.navigationcomponentsexample.DeleteFragment"
+        android:label="fragment_delete"
+        tools:layout="@layout/fragment_delete">
+        <action
+            android:id="@+id/action_deleteFragment_to_textFragment2"
+            app:destination="@id/textFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.navigationcomponentsexample.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details">
+
+        <action
+            android:id="@+id/action_detailsFragment_to_textFragment"
+            app:destination="@id/textFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="recipient"
+            android:defaultValue="None" />
+    </fragment>
+    <fragment
+        android:id="@+id/textFragment"
+        android:name="com.example.navigationcomponentsexample.TextFragment"
+        android:label="fragment_text"
+        tools:layout="@layout/fragment_text">
+
+        <argument
+            android:name="recipient"
+            android:defaultValue="None" />
+        <argument
+            android:name="surname"
+            android:defaultValue="None" />
+        <argument
+            android:name="age"
+            android:defaultValue="None" />
+        <argument
+            android:name="deleteUser"
+            android:defaultValue="None" />
+
+        <action
+            android:id="@+id/action_textFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/mainFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+</navigation>
