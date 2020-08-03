@@ -13,10 +13,19 @@
         android:orientation="vertical">
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enroll User"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"/>
+
+        <TextView
             android:id="@+id/viewButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
+            android:padding="6dp"
             android:background="@color/colorPrimary"
             android:gravity="center"
             android:text="View Names"
@@ -31,6 +40,7 @@
             android:layout_marginTop="20dp"
             android:background="@color/colorPrimary"
             android:gravity="center"
+            android:padding="6dp"
             android:text="Add Name"
             android:textColor="#FFFF"
             android:textSize="20sp" />
