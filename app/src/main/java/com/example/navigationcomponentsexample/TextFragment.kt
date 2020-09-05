@@ -75,11 +75,13 @@ class TextFragment : Fragment(), View.OnClickListener {
         when (v!!.id) {
             R.id.next_button -> {
                 if(!recipient.equals("None")){
-                bundle = bundleOf("newuser" to user)}
+                bundle = bundleOf("newuser" to user)
+                }
                 else{
                     bundle = bundleOf("deleteUser" to deleteName)
                 }
                 navController.navigate(R.id.action_textFragment_to_mainFragment, bundle)
+
             }
         }
     }
